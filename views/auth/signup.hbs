@@ -1,0 +1,30 @@
+{{>menu-index}}
+
+{{>errors}}
+
+<div class="row card-user">
+  <div class="col-md-6 mx-auto">
+    <div class="card">
+      <div class="card-header mx-auto">
+        <h1>Registrarse</h1>
+      </div>
+      <div class="card-body">
+        <form action="/api/auth/signup" method="POST">
+          <div class="form-group">
+            <input type="text" name="fullName" class="form-control" placeholder="Nombre Completo:" value="{{fullName}}">
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" class="form-control" placeholder="Correo Electronico:" value="{{email}}">
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" class="form-control" placeholder="Contraseña:" value="{{password}}">
+          </div>
+          {{!-- <div class="form-group">
+            <input type="password" name="confirmarContrasena" class="form-control" placeholder="confirmar contraseña:" value="{{confirmarContrasena}}">
+          </div> --}}
+          <input type="Submit" value="Registrarse" class="btn btn-success btn-block">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

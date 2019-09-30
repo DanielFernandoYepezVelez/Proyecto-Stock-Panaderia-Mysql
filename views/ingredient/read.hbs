@@ -1,0 +1,21 @@
+{{>sidebar}}
+
+<div class="row container mx-auto">
+  {{#each ingredients }}
+    <div class="col-md-6">
+      <div class="card card-bottom">
+        <div class="card-body">
+          <strong>Ingrediente:</strong> {{ingredientName}}<br>
+          <strong>Tipo De Medida:</strong> {{typeMeasureSolidIngredient}} <br>
+          <strong>Valor:</strong> {{valueTypeMeasureSolid}} <br>
+          <strong>Tipo De Medida:</strong> {{typeMeasureLiquidIngredient}} <br>
+          <strong>Valor:</strong> {{valueTypeMeasureLiquid}} <br>
+          <strong>Cantidad Unitaria:</strong> {{ingredientQuantity}} <br>
+          <strong>Fecha Ingreso:</strong> {{timeago created_at}} <br>
+        </div>
+      </div>
+    </div>
+    {{else}}
+    {{>card-body}}
+  {{/each}}
+</div>

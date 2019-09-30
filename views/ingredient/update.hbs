@@ -1,0 +1,23 @@
+{{>sidebar}}
+
+{{>errors}}
+
+<div class="row container mx-auto">
+  {{#each ingredients}}
+    <div class="col-md-6">
+      <div class="card card-bottom">
+        <div class="card-body">
+          <strong>Ingrediente:</strong> {{ingredientName}} <a href="/updateIngredient{{id}}"><i class="fas fa-edit button-edit"></i></a> <br>
+          <strong>Tipo De Medida:</strong> {{typeMeasureSolidIngredient}} <br>
+          <strong>Valor:</strong> {{valueTypeMeasureSolid}} <br>
+          <strong>Tipo De Medida:</strong> {{typeMeasureLiquidIngredient}} <br>
+          <strong>Valor:</strong> {{valueTypeMeasureLiquid}} <br>
+          <strong>Cantidad Unitaria:</strong> {{ingredientQuantity}} <br>
+          <strong>Fecha Ingreso:</strong> {{timeago created_at}} <br>
+        </div>
+      </div>
+    </div>
+    {{else}}
+    {{>card-body}}
+  {{/each}}
+</div>

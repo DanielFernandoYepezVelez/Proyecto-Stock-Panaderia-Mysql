@@ -1,0 +1,33 @@
+{{>sidebar}}
+
+{{>errors}}
+
+<section class="col-md-8 mx-auto">
+  <article class="card">
+    <div class="card-header">
+      <h2 class="crud-h2">Crear Ingrediente</h2>
+    </div>
+    <div class="card-body">
+      <form action="/api/ingredient/create" method="POST">
+        <div class="form-group">
+          <input type="text" name="ingredientName" class="form-control" placeholder="nombre ingrediente:" autofocus value="{{nombreIngrediente}}">
+        </div>
+        <div class="crud-display form-group">
+          <input type="text" name="typeMeasureSolidIngredient" class="menu-left form-control" value="Kilogramos"  autofocus>
+          <input type="text" name="valueTypeMeasureSolid" class="form-control" placeholder="valor medida(Kg):" autofocus value="{{valorTipoMedidaIngredienteSolido}}">
+        </div>
+        <div class="crud-display form-group">
+          <input type="text" name="typeMeasureLiquidIngredient" class="menu-left form-control" value="Litros"  autofocus>
+          <input type="text" name="valueTypeMeasureLiquid" class="form-control" placeholder="valor medida(Lt):" autofocus value="{{valorTipoMedidaIngredienteLiquido}}">
+        </div>
+        <div class="form-group">
+          <input type="text" name="ingredientQuantity" class="form-control" placeholder="cantidad unitaria:" autofocus value="{{cantidadUnitariaIngrediente}}">
+        </div>
+        {{!-- <div class="form-group">
+          <input type="text" name="fechaIngresoIngrediente" class="form-control" placeholder="fecha ingreso:" autofocus>
+        </div> --}}
+        <input class="btn btn-success btn-block" type="submit" value="Crear">
+      </form>
+    </div>
+  </article>
+</section>

@@ -1,0 +1,21 @@
+{{>sidebar}}
+
+{{>errors}}
+
+<div class="row container mx-auto">
+  {{#each products}}
+    <div class="col-md-6">
+      <div class="card card-bottom">
+        <div class="card-body">
+          <strong>Nombre Del Pan:</strong> {{breadName}} <a href="/updateProduct{{id}}"><i class="fas fa-edit button-edit"></i></a> <br>
+          <strong>Sabor De Pan:</strong> {{breadFlavor}} <br>
+          <strong>Cantidad De Panes:</strong> {{breadQuantity}} <br>
+          <strong>Estado Venta:</strong> {{saleStatus}} <br>
+          <strong>Fecha Ingreso:</strong> {{timeago created_at}} <br>
+        </div>
+      </div>
+    </div>
+    {{else}}
+    {{>card-body2}}
+  {{/each}}
+</div>

@@ -1,0 +1,26 @@
+{{>menu-index}}
+
+{{>messages}}
+{{>errors}}
+
+<div class="row card-user">
+  <div class="col-md-6 mx-auto">
+    <div class="card">
+      <div class="card-header mx-auto">
+        <h1>Iniciar Sesion</h1>
+        {{!-- <a href="/"><img src="assets/img/logo2.png" class="rounded-circle mx-auto" width="70%" height="65vh" style="border-radius: 50% " alt="logo-login"></a>         --}}
+      </div>
+      <div class="card-body">
+        <form action="/api/auth/signin" method="POST">
+          <div class="form-group">
+            <input type="email" name="email" class="form-control" placeholder="Correo Electronico:">
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" class="form-control" placeholder="Contraseña:">
+          </div>
+          <input type="submit" value="Iniciar Sesion" class="btn btn-success btn-block">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

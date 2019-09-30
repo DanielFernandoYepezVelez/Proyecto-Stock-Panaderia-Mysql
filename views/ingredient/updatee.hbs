@@ -1,0 +1,32 @@
+{{>sidebar}}
+
+<div class="col-8 mx-auto">
+  <div class="card">
+    <div class="card-header">
+      <h2 class="crud-h2" >Editar Ingrediente</h2>
+      <div class="card-body">
+        <form action="/api/ingredient/update/{{ingredients.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="_method" value="PUT">
+          <div class="form-group">
+            <input type="text" name="ingredientName" class="form-control" placeholder="nombre ingrediente:" autofocus value="{{ingredients.ingredientName}}">
+          </div>
+          <div class="crud-display form-group">
+            <input type="text" name="typeMeasureSolidIngredient" class="menu-left form-control" value="Kilogramos">
+            <input type="text" name="valueTypeMeasureSolid" class="form-control" placeholder="valor medida(Kg):" autofocus value="{{ingredients.valueTypeMeasureSolid}}">
+          </div>
+          <div class="crud-display form-group">
+            <input type="text" name="typeMeasureLiquidIngredient" class="menu-left form-control" value="Litros">
+            <input type="text" name="valueTypeMeasureLiquid" class="form-control" placeholder="valor medida(Lt):" autofocus value="{{ingredients.valueTypeMeasureLiquid}}">
+          </div>
+          <div class="form-group">
+            <input type="text" name="ingredientQuantity" class="form-control" placeholder="cantidad unitaria:" autofocus value="{{ingredients.ingredientQuantity}}">
+          </div>
+          {{!-- <div class="form-group">
+            <input type="text" name="created_at" class="form-control" placeholder="fecha ingreso:" autofocus value="{{ingredients.created_at}}">
+          </div> --}}
+          <input class="btn btn-success btn-block" type="submit" value="Actualizar">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

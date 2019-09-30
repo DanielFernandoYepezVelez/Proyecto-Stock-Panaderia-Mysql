@@ -1,0 +1,54 @@
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-light background-items" id="sidebar-wrapper">
+      <div class="sidebar-heading header-sidebar">
+        <a href="/createIngredient"><img src="assets/img/logo2.jpg" class="logo-img" alt="img-logo"></a>
+      </div>
+      <div class="list-group list-group-flush">
+        <a href="/createIngredient" class="list-group-item list-group-item-action bg-light background-items">Crear Ingrediente</a>
+        <a href="/readIngredient" class="list-group-item list-group-item-action bg-light background-items">Listar Ingredientes</a>
+        <a href="/updateIngredient" class="list-group-item list-group-item-action bg-light background-items">Editar Ingrediente</a>
+        <a href="/deleteIngredient" class="list-group-item list-group-item-action bg-light background-items">Eliminar Ingrediente</a>
+        <a href="/createProduct" class="list-group-item list-group-item-action bg-light background-items">Crear Producto</a>
+        <a href="/readProduct" class="list-group-item list-group-item-action bg-light background-items">Listar Productos</a>
+        <a href="/updateProduct" class="list-group-item list-group-item-action bg-light background-items">Editar Producto</a>
+        <a href="/deleteProduct" class="list-group-item list-group-item-action bg-light background-items">Eliminar Producto</a>
+      </div>
+    </div>
+
+    {{!-- Para mostrar determinados enlaces del menu de la aplicacion
+    {{#if user}}
+      Aqui muestro las rutas o enlaces que yo quiero, si existe un usuario.
+    {{/if}}
+     --}}
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light background-items">
+      <i id="menu-toggle" class="fas fa-bars toggle-icon"></i>
+      <button style="background: orange" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span {{!--class="navbar-toggler-icon "--}} class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          {{!-- <li class="nav-item active">
+            <a class="nav-link" href="#">about<span class="sr-only">(current)</span></a>
+          </li> --}}
+          {{!-- <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li> --}}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle letters-items" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{user.fullName}}
+            </a>
+            <div style="top:115%" class="dropdown-menu dropdown-menu-right background-items" aria-labelledby="navbarDropdown">
+              <a class="background-items dropdown-item" href="/api/auth/logout">Cerrar Sesion</a>
+              {{!-- <a class="dropdown-item" href="#">Another action</a> --}}
+              {{!-- <div class="dropdown-divider"></div> --}}
+              {{!-- <a class="dropdown-item" href="#">Something else here</a> --}}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    {{>messages}}

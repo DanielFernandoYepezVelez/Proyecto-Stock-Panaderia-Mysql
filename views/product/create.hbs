@@ -1,0 +1,40 @@
+{{>sidebar}}
+
+{{>errors}}
+
+{{#each errors}}
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{text}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+{{/each}}
+
+<section class="col-md-8 mx-auto">
+  <article class="card">
+    <div class="card-header">
+      <h2 class="crud-h2">Crear Producto</h2>
+    </div>
+    <div class="card-body">
+      <form action="/api/product/create" method="POST">
+        <div class="form-group">
+          <input type="text" name="breadName" class="form-control" placeholder="nombre pan:" autofocus value="{{nombreDelPan}}">
+        </div>
+        <div class="crud-display form-group">
+          <input type="text" name="breadFlavor" class="menu-left form-control" placeholder="sabor pan:" autofocus value="{{saborDePan}}">
+        </div>
+        <div class="crud-display form-group">
+          <input type="text" name="breadQuantity" class="form-control" placeholder="cantidad panes:" autofocus value="{{cantidadPanes}}">
+        </div>
+        <div class="crud-display form-group">
+          <input type="text" name="saleStatus" class="menu-left form-control" placeholder="estado venta(Vendido o En Venta):" autofocus value="{{estadoVenta}}">
+        </div>
+        {{!-- <div class="crud-display form-group">
+          <input type="text" name="created_at" class="menu-left form-control" placeholder="fecha Ingreso:" autofocus>
+        </div> --}}
+          <input class="btn btn-success btn-block" type="submit" value="Crear">
+      </form>
+    </div>
+  </article>
+</section>
