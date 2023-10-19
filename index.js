@@ -45,7 +45,7 @@ app.set('view engine', '.hbs');
 /* No voy a almacenar la sessión en el servidor, sino en
 la Base de datos de MySQL */
 app.use(session({
-    secret: 'mysecretapp2',
+    secret: process.env.SECRET_KEY,
     resave: false,
     saveUninitialized: false,
     store: new MySQLStore(database)
